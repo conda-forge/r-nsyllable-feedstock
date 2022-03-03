@@ -1,4 +1,4 @@
-{% set version = '1.0' %}
+{% set version = "1.0.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/nsyllable_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/nsyllable/nsyllable_{{ version }}.tar.gz
-  sha256: ba22ee9251b14088d0ebda00d13e858b88ca1de068ac61bc4af9792407599800
+  sha256: 4fa2448c76f570d00d1ab4e82bcb0b63c66d5bee7d115a10417ddef27674bfe7
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -37,11 +37,10 @@ test:
 about:
   home: https://github.com/quanteda/nsyllable
   license: GPL-3.0-only
-  summary: Counts syllables in character vectors for English words.  Imputes syllables as the
-    number of vowel sequences for words not found.
+  summary: Counts syllables in character vectors for English words.  Imputes syllables as the number of vowel sequences for words not found.
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
