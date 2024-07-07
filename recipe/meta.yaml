@@ -1,6 +1,5 @@
 {% set version = "1.0.1" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-nsyllable
@@ -13,8 +12,7 @@ source:
   sha256: 4fa2448c76f570d00d1ab4e82bcb0b63c66d5bee7d115a10417ddef27674bfe7
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
   noarch: generic
   rpaths:
     - lib/R/lib/
